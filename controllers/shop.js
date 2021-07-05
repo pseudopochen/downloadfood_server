@@ -1,13 +1,13 @@
+import path from 'path';
+import fs from 'fs';
 import ajax from "./ajax.js";
 
 export const getShops = function (req, res) {
   const latitude = req.query.latitude;
   const longitude = req.query.longitude;
-
-  setTimeout(function () {
-    const data = require("../data/shops.json");
+    const jsonString = fs.readFileSync(path.resolve() + '/data/shops.json'); 
+    const data = JSON.parse(jsonString); //require("../data/shops.json");
     res.send({ code: 0, data });
-  }, 300);
 };
 
 export const searchShops = function (req, res) {

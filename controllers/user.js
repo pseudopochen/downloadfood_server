@@ -6,6 +6,7 @@ import { Base64 } from "js-base64";
 
 import UserModel from "../models/UserModel.js";
 
+const _filter = {'pwd': 0, '__v': 0}
 const users = {};
 
 export const userLoginPWD = function (req, res) {
